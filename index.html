@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome Kids!</title>
   <style>
     body {
@@ -15,13 +13,13 @@
 
     header {
       background-color: #ff8fab;
-      padding: 30px;
+      padding: 2rem 1rem;
       color: white;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     h1 {
-      font-size: 3em;
+      font-size: clamp(2rem, 5vw, 3em);
       margin: 0;
     }
 
@@ -34,6 +32,7 @@
       text-decoration: none;
       color: white;
       font-weight: bold;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
     }
 
     nav a:hover {
@@ -41,16 +40,16 @@
     }
 
     .section {
-      padding: 30px;
+      padding: 2rem 1rem;
     }
 
     .section h2 {
-      font-size: 2em;
+      font-size: clamp(1.5rem, 4vw, 2em);
       color: #ff5d8f;
     }
 
     .section p {
-      font-size: 1.3em;
+      font-size: clamp(1rem, 2.5vw, 1.3em);
       color: #555;
     }
 
@@ -58,10 +57,11 @@
       background-color: #fff9c4;
       border: 2px dashed #fbc02d;
       border-radius: 15px;
-      padding: 20px;
+      padding: 1.5rem;
       margin: 20px auto;
-      width: 80%;
+      width: 90%;
       max-width: 600px;
+      box-sizing: border-box;
     }
 
     .fun-box img {
@@ -91,57 +91,29 @@
       padding: 20px;
       font-weight: bold;
       box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+    }
+
+    /* Responsive tweaks for small devices */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .fun-box {
+        padding: 1rem;
+      }
     }
   </style>
   <script>
     function quizGame() {
-      const answer = prompt("What color is the sky on a clear day?");
-      if (answer.toLowerCase() === "blue") {
-        alert("Yay! That's right! 🌈");
+      const answer = prompt("What is 2 + 2?");
+      if (answer && answer.trim() === "4") {
+        alert("Correct! You're a math star! ✨");
       } else {
-        alert("Oops! Try again next time! ☁️");
+        alert("Oops! That's not quite right. Try again! ❌");
       }
     }
   </script>
 </head>
-<body>
-  <header>
-    <h1>🎉 Welcome to Fun World! 🎨</h1>
-    <p>Learning and playing go hand in hand!</p>
-    <nav>
-      <a href="#learn">Learn</a>
-      <a href="#games">Games</a>
-      <a href="#gallery">Gallery</a>
-    </nav>
-  </header>
-
-  <div class="section" id="learn">
-    <h2>📚 Learn Something New!</h2>
-    <div class="fun-box">
-      <p>Did you know elephants can't jump? 🐘</p>
-      <p>Or that the moon has moonquakes? 🌕</p>
-      <img src="https://cdn.pixabay.com/photo/2017/01/31/21/22/moon-2021257_960_720.jpg" alt="Moon Image">
-    </div>
-  </div>
-
-  <div class="section" id="games">
-    <h2>🎮 Let's Play a Game!</h2>
-    <div class="fun-box">
-      <p>What color is the sky on a clear day?</p>
-      <button onclick="quizGame()">Answer</button>
-    </div>
-  </div>
-
-  <div class="section" id="gallery">
-    <h2>🖼️ Our Happy Gallery</h2>
-    <div class="fun-box">
-      <p>Look at these fun moments!</p>
-      <img src="https://cdn.pixabay.com/photo/2017/02/01/13/52/children-2032371_960_720.jpg" alt="Kids Playing">
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 Fun World for Kids. All rights reserved.
-  </footer>
-</body>
-</html>
